@@ -41,14 +41,14 @@ The Fest Information System is a comprehensive tool designed to catalog and mana
 
 Get a glimpse of the Fest Information System in action:
 
-![Overview](screenshots/home.png)
+![Overview](Screenshots/home.png)
 *Visual overview of the website, with quick access to key details.*
 
-![Events](screenshots/events.png)
+![Events](Screenshots/events.png)
 *All types of events: cultural, sports and virtual.*
 
-![Event List](screenshots/culevents.png)
+![Event List](Screenshots/culevents.png)
 *List of the cultural events organised in year 2022.*
 
-![Event Details](screenshots/event_description.png)
+![Event Details](Screenshots/event_description.png)
 *In-depth view of the events, including event name, entry fees, coordinators, sponsors, etc.*
