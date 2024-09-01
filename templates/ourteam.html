@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block linkshead %}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    .team {
+        padding-bottom: 70px;
+        font-family: 'Poppins', sans-serif
+    }
+
+    .team .section-title {
+        text-align: left;
+        margin-bottom: 50px
+    }
+
+    .team__item {
+        height: 480px;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+    }
+
+    .team__item:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(34, 48, 96, 0.8);
+        content: "";
+        z-index: -1;
+        opacity: 0;
+        -webkit-transition: all, 0.5s, ease-out, .5s;
+        -o-transition: all, 0.5s, ease-out, .5s;
+        transition: all, 0.5s, ease-out, .5s
+    }
+
+    .team__item:hover:after {
+        opacity: 1
+    }
+
+    .team__item:hover .team__text {
+        top: 0
+    }
+
+    .team__item:hover .team__text .team__title {
+        border-bottom: 1px solid rgba(183, 183, 183, 0.2);
+        padding: 0 0 26px;
+        margin-bottom: 26px;
+        opacity: 0;
+        visibility: hidden;
+        position: relative;
+        bottom: initial;
+        opacity: 1;
+        visibility: visible
+    }
+
+    .team__item:hover .team__text p {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: all .5s ease .3s;
+        -o-transition: all .5s ease .3s;
+        transition: all .5s ease .3s
+    }
+
+    .team__item:hover .team__text .team__social {
+        opacity: 1;
+        visibility: visible;
+        bottom: 34px;
+        -webkit-transition: all .5s ease .5s;
+        -o-transition: all .5s ease .5s;
+        transition: all .5s ease .5s
+    }
+
+    .team__text {
+        height: 100%;
+        top: 361px;
+        position: relative;
+        padding: 35px 30px 30px;
+        -webkit-transition: .5s;
+        -o-transition: .5s;
+        transition: .5s
+    }
+
+    .team__text .team__title {
+        border-bottom: 1px solid rgba(183, 183, 183, 0.2);
+        padding: 0 0 26px;
+        margin-bottom: 26px;
+        position: relative
+    }
+
+    .team__text .team__title h4 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 6px
+    }
+
+    .team__text .team__title span {
+        font-size: 15px;
+        color: #88C417
+    }
+
+    .team__text p {
+        color: #e4e4e4;
+        line-height: 26px;
+        opacity: 0;
+        visibility: hidden;
+        position: relative;
+        top: 50px;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s
+    }
+
+    .team__text .team__social {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 0 30px;
+        bottom: 0;
+        opacity: 0;
+        visibility: hidden
+    }
+
+    .team__text .team__social a {
+        display: inline-block;
+        font-size: 20px;
+        color: #fff;
+        margin-right: 34px;
+        -webkit-transition: all, .3s;
+        -o-transition: all, .3s;
+        transition: all, .3s
+    }
+
+    .team__text .team__social a:last-child {
+        margin-right: 0
+    }
+
+    .team__text .team__social a:hover {
+        color: #88C417
+    }
+
+    @media(max-width:768px) {
+        .team__item {
+            height: 350px
+        }
+
+        .team__text {
+            padding: 25px 20px 20px
+        }
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Our Team</h1>
+        <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Dignitaries</h2>
+        <!-- Single Starts  -->
+        <center>
+            {% for dignitary in dignitaries %}
+            <div class="col-lg-4 col-md-6">
+                <div class="team__item set-bg" style="width: 225px;
+                height: 225px; background-image: url('{{dignitary.image.url}}');">
+                    <div class="team__text">
+                        <div class="team__title">
+                            <h4>{{dignitary.name}}</h4>
+                            <span>{{dignitary.title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </center>
+        <!-- Single Ends    -->
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Organizing Committee</h2>
+        <!-- Single Starts  -->
+        {% for commitees in commitee %}
+        <div class="col-lg-4 col-md-6">
+            <div class="team__item set-bg" style="width: 225px;
+                height: 225px; background-image: url('{{commitees.image.url}}');">
+                <div class="team__text">
+                    <div class="team__title">
+                        <h4>{{commitees.name}}</h4>
+                        <span>{{commitees.title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- Single Ends    -->
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Core Committee</h2>
+        <!-- Single Starts  -->
+        {% for cores in core %}
+        <div class="col-lg-4 col-md-6">
+            <div class="team__item set-bg" style="width: 225px;
+                height: 225px; background-image: url('{{cores.image.url}}');">
+                <div class="team__text">
+                    <div class="team__title">
+                        <h4>{{cores.name}}</h4>
+                        <span>{{cores.title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- Single Ends    -->
+    </div>
+</div>
+
+{% endblock %}

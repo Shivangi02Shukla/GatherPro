@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block linkshead %}
+
+<style>
+    .col {
+        width: 100px;
+    }
+
+    .col img {
+        width: 300px;
+        margin-bottom: 50px;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <center>
+        <h1 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Sponsors</h1>
+        <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Gold Sponsor</h2>
+
+        {% for golds in gold %}
+        <div class="row">
+            <div class="col">
+                <img src="{{golds.image.url}}" alt="">
+            </div>
+        </div>
+        {% endfor %}
+    </center>
+</div>
+<div class="container">
+    <center>
+        <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Event Sponsors</h2>
+
+        <div class="row">
+            {% for events in event %}
+            <div class="col">
+                <img src="{{events.image.url}}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+    </center>
+</div>
+<div class="container">
+    <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Stall Sponsors</h2>
+    <div class="row">
+        {% for stalls in stall %}
+        <div class="col">
+            <img src="{{stalls.image.url}}" alt="" style margin-right:50 px>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        {% for stalls in stall2 %}
+        <div class="col">
+            <img src="{{stalls.image.url}}" alt="" style margin-right:50 px>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row">
+        {% for stalls in stall3 %}
+        <div class="col">
+            <img src="{{stalls.image.url}}" alt="" style margin-right:50 px>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="container">
+    <center>
+        <h2 style="text-align: center; margin-top: 50px; margin-bottom: 50px;">Printing Partner</h2>
+        {% for printings in printing %}
+        <div class="row">
+            <div class="col">
+                <img src="{{printings.image.url}}" alt="">
+            </div>
+        </div>
+        {% endfor %}
+    </center>
+</div>
+
+
+{% endblock %}

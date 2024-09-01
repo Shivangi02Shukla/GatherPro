@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block linkshead %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'img/sabrang.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Sabrang 2018</h5>
+            <a href="sabrang.html" class="btn btn-primary">View events</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'img\sabrang2019.png' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Sabrang 2019 </h5>
+            <a href="#" class="btn btn-primary">View events</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="{% static 'img\sabrang22.jpeg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Sabrang 2022</h5>
+            <a href="/sabrang-2022/" class="btn btn-primary">View events</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

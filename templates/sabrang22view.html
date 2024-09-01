@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block linkshead %}
+
+<style>
+    .details {
+        margin-bottom: 50px;
+    }
+
+    table {
+        margin-bottom: 10px;
+        border: 1px solid #d9d9d9;
+        width: 591px;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    table td {
+        padding: 3px 10px;
+        border-bottom: 1px solid #d9d9d9;
+        border-right: 1px solid #d9d9d9;
+    }
+
+    table,
+    td,
+    th,
+    tr {
+        border: 1px solid;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+<div class="modal-body">
+    <center>
+        <img src="{{program.image.url}}" class="card-img-top" style=" width:300px; margin-bottom: 30px;">
+
+        <div class="details">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p><strong>Event name </strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.name}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Event Description</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.desc}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Organising Club</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.club_name}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Event Entry Fee</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.fee}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Event Prize Poll</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.prize}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Event Co-Ordinators</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.coordinator_name_1}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Event Co-Ordinators no</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.coordinator_no_1}}</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p><strong>Event Co-Ordinators</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.coordinator_name_2}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>Event Co-Ordinators no</strong></p>
+                        </td>
+                        <td>
+                            <p>{{program.coordinator_no_2}}</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </center>
+</div>
+
+<div class="details">
+    <center>
+        <h1 style="margin-bottom: 50px;">Winners</h1>
+
+        <table>
+            <tr>
+                <th>Winner Name</th>
+                <th>Winner Email</th>
+                <th>Winner Contact</th>
+            </tr>
+            {% for Winners in winner %}
+            <tr>
+                <td>{{Winners.name}}</td>
+                <td>{{Winners.email}}</td>
+                <td>{{Winners.contact}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</div>
+
+<div class="details">
+    <center>
+        <h1 style="margin-bottom: 50px;">Participants</h1>
+
+        <table>
+            <tr>
+                <th>Participant Name</th>
+                <th>Participant Email</th>
+                <th>Participant Contact</th>
+            </tr>
+            {% for participants in participant %}
+            <tr>
+                <td>{{participants.name}}</td>
+                <td>{{participants.email}}</td>
+                <td>{{participants.contact}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
