@@ -52,3 +52,8 @@ Get a glimpse of the Fest Information System in action:
 
 ![Event Details](Screenshots/event_description.png)
 *In-depth view of the events, including event name, entry fees, coordinators, sponsors, etc.*
+
+## 📧 Contact If you have any questions or feedback, feel free to reach out:
+
+Email: shivangiss020@gmail.com
+LinkedIn: (www.linkedin.com/in/shivangi-shukla20)
